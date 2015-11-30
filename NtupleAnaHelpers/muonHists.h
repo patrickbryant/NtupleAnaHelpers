@@ -1,6 +1,8 @@
 #ifndef NTUPLEANAHELPERS_MUONHISTS_H
 #define NTUPLEANAHELPERS_MUONHISTS_H
 
+#include <EventLoop/Worker.h>
+
 #include "TH1D.h"
 #include "TH2D.h"
 #include "TProfile.h"
