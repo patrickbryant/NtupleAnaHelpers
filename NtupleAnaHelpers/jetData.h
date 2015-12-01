@@ -16,6 +16,7 @@ class jetData{
   float M;
   float MV2c20;
   float Jvt;
+  int   clean_passLooseBad;
   float Timing;
   float MuonSegmentCount; 
 
@@ -29,9 +30,10 @@ class jetData{
     MV2c20 = m_MV2c20;
 
     // Set directly out side of constructor
-    Jvt              = -99;
-    Timing           = -99;
-    MuonSegmentCount = -99;
+    Jvt                = -99;
+    clean_passLooseBad = -99;
+    Timing             = -99;
+    MuonSegmentCount   = -99;
   };
 
   TLorentzVector vec() const{
