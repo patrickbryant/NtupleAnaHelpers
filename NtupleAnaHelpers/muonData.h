@@ -17,6 +17,7 @@ class muonData{
   int   IsMedium;
   int   IsTight;
   float ptcone20;
+  float EnergyLoss;
 
   muonData(float m_pt, float m_eta, float m_phi, float m_M){ 
 
@@ -29,7 +30,7 @@ class muonData{
     IsMedium          = -99;
     IsTight           = -99;
     ptcone20          = -99;
-      
+    EnergyLoss        = 0;
   }
 
   TLorentzVector vec() const{
@@ -37,6 +38,20 @@ class muonData{
     vec.SetPtEtaPhiM(pt,eta,phi,M);
     return vec;
   }
+
+
+  TLorentzVector vec_eLoss() const{
+
+    float theta_muon = vec().Theta();
+    float elossX     = EnergyLoss * sin(theta_muon) * cos(phi);
+    float elossY     = EnergyLoss * sin(theta_muon) * sin(phi);
+    float elossZ     = EnergyLoss * cos(theta_muon);
+
+    TLorentzVector muonELoss(elossX,elossY,elossZ,EnergyLoss);
+
+    return muonELoss;
+  }
+
 
 };
 
