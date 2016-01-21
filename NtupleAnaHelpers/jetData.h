@@ -22,6 +22,7 @@ class jetData{
   float Timing;
   float MuonSegmentCount; 
   const muonData* matchedMuon;
+  bool  isTagged;
  
  public:
 
@@ -38,6 +39,7 @@ class jetData{
     Timing             = -99;
     MuonSegmentCount   = -99;
     matchedMuon        = 0;
+    isTagged           = false;
   };
 
   TLorentzVector vec() const{

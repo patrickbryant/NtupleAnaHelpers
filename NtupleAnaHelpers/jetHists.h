@@ -43,9 +43,9 @@ class jetHists{
     h_pt_m   = book(wk, name, "Pt_m",   "p_{T} [GeV]",   100,  0, 1000);
     h_pt_l   = book(wk, name, "Pt_l",   "p_{T} [GeV]",   100,  0, 5000);
     h_eta    = book(wk, name, "Eta",    "Eta",           100, -3,   3);
-    h_phi    = book(wk, name, "Phi",    "Phi",           100, -3.2,   3.2);
+    h_phi    = book(wk, name, "Phi",    "Phi",            50, -3.2,   3.2);
     h_jvt    = book(wk, name, "Jvt",    "JVT",           100, -0.1,   1.1);
-    h_MV2c20 = book(wk, name, "MV2c20", "MV2c20",        100, -0.1,   1.1);
+    h_MV2c20 = book(wk, name, "MV2c20", "MV2c20",        100, -1.1,   1.1);
 
     if(detailLevel.find("muonInJet") != std::string::npos){
       h_muonInJet = new muonHists(name+"_muonInJet", wk);
