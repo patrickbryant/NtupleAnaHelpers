@@ -5,6 +5,7 @@
 #include <NtupleAnaHelpers/muonData.h>
 #include <vector>
 
+
 //
 // Jet Data
 //
@@ -23,7 +24,8 @@ class jetData{
   float MuonSegmentCount; 
   const muonData* matchedMuon;
   bool  isTagged;
- 
+  const std::vector<float>*  btagSF;
+  
  public:
 
   jetData(float m_pt, float m_eta, float m_phi, float m_E, float m_MV2c20){ 
@@ -40,6 +42,7 @@ class jetData{
     MuonSegmentCount   = -99;
     matchedMuon        = 0;
     isTagged           = false;
+    btagSF             = 0;
   };
 
   TLorentzVector vec() const{
